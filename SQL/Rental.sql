@@ -1,0 +1,23 @@
+DROP TABLE IF EXISTS SCATBOROUGH.dbo.Rental;
+
+CREATE TABLE SCATBOROUGH.dbo.Rental (
+--_ReservationId VARCHAR(8) PRIMARY KEY
+
+----,_PricelistId CHAR(8) NOT NULL
+--_SaleId VARCHAR(8)
+_RentalId CHAR(2)
+,_CustomerId CHAR(2)
+,_EquipmentId	CHAR(8) NOT NULL
+,_DateStart DATE
+,_DateEnd DATE
+--,_Milleage INT NOT NULL
+,_Revenue INT NOT NULL
+);
+
+SELECT * FROM SCATBOROUGH.dbo.Rental;
+
+INSERT INTO SCATBOROUGH.dbo.Rental VALUES(
+'01','00','MT100001','2020-05-01','2020-06-1',5000
+);
+
+SELECT * FROM SCATBOROUGH.dbo.Rental;

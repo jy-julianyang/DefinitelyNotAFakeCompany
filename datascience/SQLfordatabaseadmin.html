@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>SQL For Database Administrator</title>
+  <link href="../webdevelopment/styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+  <h1>SQL For Database Administrator</h1>
+  <p></p>
+  <a href="../Home.html">Return to Home Page</a>
+  <hr></hr>
+  <h2 id="top">Table of Contents</h2>
+  <ul lang="en-us">
+    <li><a href=#topic1>Install Systems</a></li>
+    <li><a href=#topic2>Create Database and Tables</a></li>
+    <li><a href=#topic3>Create Relationship Schema</a></li>
+    <s><li><a href=#topic4>Create Routines and Procedures</a></li></s>
+    <s><li><a href=#topic5>Optimization</a></li></s>
+  </ul>
+  <hr></hr>
+  <h2 id="topic1">Installing Systems</h2>
+  <p>
+    <ul>Required packages: 
+      <li>SQL Server 2019</li>
+      <li>SQL Server management studio 18</li>
+    </ul>
+    </p>
+  <h2 id="topic2">Create Database and Tables</h2>
+  <p>
+    <ul>
+      <li>CREATE DATABASE</li>
+      <li><a href="../SQL/Branch.sql" target="_blank">CREATE TABLE WITH PRIMARY KEY</a></li>
+      <li><a href="../SQL/Employee.sql" target="_blank">CREATE TABLE WTIH FOREIGN KEY</a></li>
+    </ul>
+  </p>
+  <h2 id="topic3">Create Relationship Schema</h2>
+  <p>
+    <h3 id="TABLE">ER Diagram</h3>
+    <a href="../images/ERDiagram.jpg">
+    <img src="../images/ERDiagram.jpg" alt="lovelysmalltits" width="600" height ="600"/>
+    </a>
+    <br />
+  <table width = "200" cellpadding = "10" cell spacing = "1" border = "1" bgcolor="#FFFFFF">
+    <thead bgcolor = #F0B823>
+    <tr>
+      <th></th>
+      <th scope="col">Employee</th>
+      <th scope="col">Branch</th>
+      <th scope="col">Department</th>
+      <th scope="col">Customer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_Id</th>
+      <td>PRIMARY KEY</td>
+      <td>PRIMARY KEY</td>
+      <td>PRIMARY KEY</td>
+      <td>PRIMARY KEY</td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_Description</th>
+      <td>NOT NULL</td>
+      <td>NOT NULL</td>
+      <td>NOT NULL</td>
+      <td>NOT NULL</td>
+    </tr>  
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_StreetAddress</th>
+      <td></td>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_City</th>
+      <td></td>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_Province</th>
+      <td></td>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_PostalCode</th>
+      <td></td>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_PhoneNo</th>
+      <td>NOT NULL</td>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_DateStart</th>
+      <td>NOT NULL</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_DateEnd</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_Branch</th>
+      <td>NOT NULL</td>
+      <td></td>
+      <td></td>
+      <td>NOT NULL</td>
+
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_Department</th>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_DirectReport</th>
+      <td>NOT NULL</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_GeneralManager</th>
+      <td></td>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_ProductSupportManager</th>
+      <td></td>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>_AssetManager</th>
+      <td></td>
+      <td>NOT NULL</td>
+      <td></td>
+      <td>NOT NULL</td>
+    </tr>
+</table>
+<table width = "200" cellpadding = "10" cell spacing = "1" border = "1" bgcolor="#FFFFFF">
+  <thead bgcolor = #F0B823>
+  <tr>
+    <th></th>
+    <th scope="col">Supplier</th>
+    <th scope="col">PriceList</th>
+    <th scope="col">PartsPriceList</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+
+    <th scope="row" bgcolor = #F0B823>_SupplierId</th>
+    <td>PRIMARY KEY</td>
+    <td>FOREIGN KEY</td>
+    <td>FOREIGN KEY</td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_PriceListId</th>
+    <td></td>
+    <td>PRIMARY KEY</td>
+    <td>PRIMARY KEY</td>
+  </tr>  
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_Description</th>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_NumberOfDoors</th>
+    <td></td>
+    <td>NOT NULL</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_NumberOfSeats</th>
+    <td></td>
+    <td>NOT NULL</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_MaximumPayload</th>
+    <td></td>
+    <td>NOT NULL</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_UnitCost</th>
+    <td></td>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_UnitSale</th>
+    <td></td>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+  </tr>
+</table>
+<table width = "200" cellpadding = "10" cell spacing = "1" border = "1" bgcolor="#FFFFFF">
+  <thead bgcolor = #F0B823>
+  <tr>
+    <th></th>
+    <th scope="col">Equipment</th>
+    <th scope="col">Reservation</th>
+    <th scope="col">EquipmentSale</th>
+    <th scope="col">Rental</th>
+    <th scope="col">Milleage</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_OwnerId</th>
+    <td>FOREIGN KEY</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+
+    <th scope="row" bgcolor = #F0B823>_EquipmentId</th>
+    <td>PRIMARY KEY</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>FOREIGN KEY</td>
+  </tr>
+
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_ReservationId</th>
+    <td>FOREIGN KEY</td>
+    <td>PRIMARY KEY</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_SaleId</th>
+    <td>FOREIGN KEY</td>
+    <td></td>
+    <td>PRIMARY KEY</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_RentalId</th>
+    <td>FOREIGN KEY</td>
+    <td></td>
+    <td></td>
+    <td>PRIMARY KEY</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_DateStart</th>
+    <td></td>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_DateEnd</th>
+    <td></td>
+    <td>NOT NULL</td>
+    <td></td> 
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_Milleage</th>
+    <td>FOREIGN KEY</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>NOT NULL</td>
+  </tr>
+</table>
+<table width = "200" cellpadding = "10" cell spacing = "1" border = "1" bgcolor="#FFFFFF">
+  <thead bgcolor = #F0B823>
+  <tr>
+    <th></th>
+    <th scope="col">PartsInvoice</th>
+    <th scope="col">ServiceInvoice</th>
+    <th scope="col">ServiceSegment</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+
+    <th scope="row" bgcolor = #F0B823>_InvoiceId</th>
+    <td>PRIMARY KEY</td>
+    <td>PRIMARY KEY</td>
+    <td>FOREIGN KEY</td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_SegmentId</th>
+    <td></td>
+    <td></td>
+    <td>PRIMARY KEY</td>
+  </tr>  
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_SaleDate</th>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_Quantity</th>
+    <td>NOT NULL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_PartsPriceListId</th>
+    <td>NOT NULL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_PartsInvoiceType</th>
+    <td>NOT NULL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_LabourHours</th>
+    <td></td>
+    <td></td>
+    <td>NOT NULL</td>
+  </tr>
+  <tr>
+    <th scope="row" bgcolor = #F0B823>_Discount</th>
+    <td>NOT NULL</td>
+    <td>NOT NULL</td>
+    <td></td>
+  </tr>
+</table>
+  </p>
+  <h2 id="topic4"><s>Create Routines and Procedures</s></h2>
+  <p>
+    <ul>
+      <li>Routines</li>
+      <li>Procedures</li>
+      <li>Triggers</li>
+    </ul> 
+  </p>
+  <h2 id="topic5"><s>Optimization</s></h2>
+  <p>
+   <ul>
+     <li>Index</li>
+     <li>Partition</li>
+     <li>Compressions</li>
+   </ul> 
+  </p>
+  </body>
+  <footer>
+    <a href="#top"> Back To Top </a>
+  </footer>
+  </html>

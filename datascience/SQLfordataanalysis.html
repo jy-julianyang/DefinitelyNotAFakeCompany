@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>SQL For Data Analysis</title>
+  <link href="../webdevelopment/styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+  <h1>SQL For Data Analysis</h1>
+  <p>Textbook: Data Analysis Using SQL by Gordon S.Linoff</p>
+  <a href="../Home.html">Return to Home Page</a>
+  <hr></hr>
+  <h2 id="top">Table of Contents</h2>
+  <ul lang="en-us">
+    <s><li><a href=#topic1>Hypothesis Testing</a></li></s>
+    <s><li><a href=#topic2>Location Analysis</a></li></s>
+    <s><li><a href=#topic3>Time Analysis</a></li></s>
+    <li><a href=#topic4>Survival Analysis</a></li>
+    <li><a href=#topic5>Market Basket Analysis</a></li>
+    <li><a href=#topic7>Data Mining</a></li>
+    <li><a href=#topic8>Customer Profiling</a></li>
+    <li><a href=#topic9>Query Engine Optimization</a></li>
+  </ul>
+  <hr></hr>
+  <h2 id="topic1">Hypothesis Testing</h2>
+  <p></p>
+  <h2 id="topic2">Location Analysis</h2>
+  <p></p>
+  <h2 id="topic3">Time Analysis</h2>
+  <p></p>
+  <h2 id="topic4">Survival Analysis</h2>
+  <p>
+    <ul>
+      <li>Stop flag(CASE WHEN STOPTYPE IS NOT NULL THEN 1 END AS ISSTOP)</li>
+      <li>Tenure(DATEDIFF(DAY,START DATE,TOP DATE))</li>
+      <li>Compare new customer and lost customer year over year</li>
+      <li>Calculate hards and survival</li>
+    </ul>
+    <ol>
+      <li>SELECT _YEAR, SUM(ISSTART) AS STARTS, SUM(ISSTOP) AS STOPS FROM(<br>
+          (SELECT YEAR(STARTDATE) AS _YEAR, 1 AS ISSTART, 0 AS ISSTOP FROM CUSTOMER) <br>
+          UNION ALL <br>
+          (SELECT YEAR(STOPDATE),0,1 FROM CUSTOMER) <br>
+      ) GROUP BY _YEAR ORDER BY _YEAR<br></li>
+      <li>WITH H AS ( <br>
+      SELECT TENURE, SUM(1-ISACTIVE) AS NUMSTOPS,COUNT(*) AS TENUREPOP,<br>
+      SUM(COUNT(*) OVER (ORDER BY TENURE DESC) AS POP, LEAD(TENURE) OVER (ORDER BY TENURE) AS NEXTTENURE,<br>
+      (LEAD(TENURE) OVER (ORDER BY TENURE) - TENURE) AS NUMDAYS,<br>
+      SUM(1 - ISACTIVE) / SUM(COUNT(*)) OVER (ORDER BY TENURE DESC) AS H <br>
+      FROM CUSTOMERS GROUP BY TENURE<br></li>
+      <li>SELECT H.*, COALESCE(EXP(SUM(LOG(1-H))OVER(ORDER BY TENURE))),1))AS S FROM H </li>
+    </ol>
+  </p>
+  <h2 id="topic5">Market Basket Analysis</h2>
+  <p>
+    <ul>
+      <li>Exploring the products</li>
+      <li>Subset groups</li>
+      <li>Duplicate association</li>
+    </ul>
+  </p>
+  <h2 id="topic7">Data Mining</h2>
+  <p>
+    <ul>
+      <li>Predictive Model</li>
+      <li>Profiling Model</li>
+      <li>Binary Classification</li>
+      <li>Nearest Neighbor Model</li>
+      <li>Naive Bayesian Model(Evidence Model)</li>
+    </ul>
+  </p>
+
+  <h2 id="topic8">Customer Profiling</h2>
+  <p><ul>
+    <li>OriginalStartDate</li>
+    <li>Tenure</li>
+    <li>Most recent purchase</li>
+    <li>Initial spending amount</li>
+    <li>Promotions led to initial relationship</li>
+    <li>Credit score</li>
+    <li>Physical neighbours</li>
+    <li>Weekend shopper</li>
+    <li>Emergency repair</li>
+    <li>Cut off date</li>
+    <li>Seasonality</li>
+    <li>Number of customers in a postal zone</li>
+    <li>Postal penetration</li>
+    <li>Response rate</li>
+    <li>Pivoting</li>
+    <li>Orders above $</li>
+    <li>Maximum number of different products</li>
+    <li>Number of distinct parts</li>
+    <li>Longest service time</li>
+    <li>Average service time</li>
+    <li>Percentage above average service time</li>
+    <li>Distance to branch</li>
+    <li>Frequency</li>
+    <li>Proportion</li>
+    <li>Email domains</li>
+    <li>Street names</li>
+    <li>Sloap for time series</li>
+    <li>Declining usage</li>
+  </ul></p>
+
+  <h2 id="topic9">Query Engine Optimization</h2>
+  <p><ul>
+    <li>Avoid full table scan</li>
+    <li>Use parallelism for multiple threads</li>
+    <li>Use INDEX for LOOKUP, JOIN AND SORT</li>
+    <li>Only use tables and columns when needed</li>
+    <li>Use consistent data types</li>
+    <li>Use DISTINCT only when necessary</li>
+    <li>Use UNION ALL over UNION</li>
+    <li>Use WHERE over HAVING</li>
+    <li>INNER JOIN is faster than OUTER JOIN</li>
+    <li>Do not use function call when using INDEX</li>
+    <li>Use IN or UNION ALL over OR </li>
+    <li>Use limiter to allow SQL collect smallest amount of data</li>
+    <li>Use windowed function OVER(PARTITION BY) rather than group by</li>
+  </ul></p>
+  </body>
+  <footer>
+    <a href="#top"> Back To Top </a>
+  </footer>
+  </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Git</title>
+  <link href="../webdevelopment/styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+  <h1>Git</h1>
+  <a href="../Home.html">Return to Home Page</a>
+  <hr></hr>
+  <h2 id="top">Table of Contents</h2>
+  <ul lang="en-us">
+    <li><a href=#topic1>Basic commands</a></li>
+    <li><a href=#topic2>Git log</a></li>
+    <li><a href=#topic3>Git reset</a></li>
+    <li><a href=#topic4>Branching</a></li>
+    <li><a href=#topic5>Gitclone</a></li>
+    <li><a href=#topic6>CookieCutter</a></li>
+  </ul>
+  <hr></hr>
+  <h2 id="topic1">Basic Git commands</h2>
+  <p >
+    <li>$git --version </li>
+    <li>$git help init  </li>
+    <li>$git config --global user.name "Julian Yang"  </li>
+    <li>$git config --global user.email "julianyang@toromont.com"  </li>
+    <li>$git config --global core.editor "VSCode"  </li>
+    <li>$git config --list  </li>
+    <li>$git remote set-url origin https://gith</li>
+    <li>$cd c:/work/work/projects </li>
+    <li>$mkdir folder  </li>
+    <li>$cd folder  </li>
+    <li>$git init  *init git in this directory*</li>
+    <li>$ls  *file list*</li>
+    <li>$ls -A  </li>
+    <li>$cd .git  </li>
+    <li>$ls -A  </li>
+    <li>$cd ..  </li>
+    <li>$touch lists.txt  </li>
+    <li>$rm lists.txt  *remove file* </li>
+    <li>$ls  </li>
+    <li>$touch list.txt *create file*  </li>
+    <li>$git status  </li>
+    <li>$git add list.txt  </li>
+    <li>$git status  </li>
+    <li>$git commit -m "create file" </li>
+    <li>$git status  </li>
+    <li>$git log  </li>
+    <li>$vscode list.txt  </li>
+    <li>$git status  </li>
+    <li>$git diff *check changes* </li> 
+    <li>$git commit -m "update file"  </li>
+    <li>$git status  </li>
+  </p>
+  <h2 id="topic2">>Git log</h2>
+  <p>
+    <li>$git log  </li>
+    <li>$git add file.txt  </li>
+    <li>$git status  </li>
+    <li>$git diff --staged </li>
+    <li>$git commit -m "edit file"  </li>
+    <li>$git diff asldkfj file.txt  </li>
+    <li>$git checkout HEAD~3 file.txt  </li>
+  </p>
+  <h2 id="topic3">Git reset</h2>
+  <p>
+    <li>$git log  </li>
+    <li>$git reset HEAD~1 --soft *removes commit, doesn't change staging'*  </li>
+    <li>$git reset HEAD~1 --mixed *removes commit, clear staging*  </li>
+    <li>$git reset HEAD~1 --hard *removes commit, also remove file on computa*  </li>
+    </p>
+  <h2 id="topic4">Branching</h2>
+  <p>
+    <li>$git branch branchJ  </li>
+    <li>$git branch  </li>
+    <li>$git branch branchS  </li>
+    <li>$git checkout branchJ  </li>
+    <li>$git checkout master  </li>
+    <li>$git merge branchJ  </li>
+    <li>$git merge branchS </li>
+  </p>
+  <h2 id="topic5">Gitclone</h2>
+  <p>
+    <li>$pwd   </li>    
+    <li>$cd..   </li>
+    <li>$mkdir new_project   </li>
+    <li>$git clone https://   </li>
+    <li>$git fetch  </li>
+    <li>$git pull  </li>
+    <li>$git status  </li>
+  </p>
+    <h2 id="topic6"">CookieCutter</h2>
+  <p>
+    <li>$pip install cookiecutter  </li>    
+    <li>$cookiecutter https://github.com/folder/folder </li>
+    <li>$projectname: new_project  </li>
+    <li>$description: new_project_for_who  </li>
+    <li>$license: 3  </li>
+    <li>$python version: 1 </li>
+    <li>$ls  </li>
+    <li>$ls -RT 2 </li>
+  </p>
+  </body>
+  <footer>
+    <a href="#top"> Back To Top </a>
+  </footer>
+  </html>

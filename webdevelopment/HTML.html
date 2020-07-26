@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>HTML</title>
+  <link href="styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<header>
+    <h2>HTML</h2>
+    <b>List of topics</b>
+    <nav>
+      <ul>
+        <li> <a href="#TEXT">Text </a></li>
+        <li> <a href="#LIST">List </a></li>
+        <li> <a href="#LINK">Link </a></li>
+        <li> <a href="#IMAGE">Image </a></li>
+        <li> <a href="#TABLE">Table </a></li>
+        <li> <a href="#VIDEO">Video </a></li>
+        <li> <a href="#FORM">Form </a></li>
+      </ul>
+</nav>
+  <h3>List of books</h3>
+    <li> HTML&CSS</li>
+    <li> Javascript&JQuery</li>
+    <br>
+    <br>
+<a href="../Home.html">Return to Home Page</a>
+  <hr></hr>
+</header>
+
+
+  <body>
+  <h2 id="HTML">HTML</h2>
+  <h3 id="TEXT">Text</h3>
+  <p lang="chinese-simplified">中文</p>
+  <p lang="fr">Paragraphe en Francais</p>
+  <p>
+    This is a sentence with <b> bold </b> element. <br>
+    This is a sentence with <i> italic </i> element. <br>
+    This is a sentence with Super<sup>script</sup> element. <br>
+    This is a sentence with Sub<sub>script</sub> element. <br>
+    This is a sentence with line <br> break element. <br>
+    <!--This is a sentence with horizontal <hr /> ruler element. <br> -->
+    <!--This is comment. -->
+    This is a sentence with <strong>strong </strong> element. <br>
+    This is a sentence with <em>emphasis </em> element. <br>
+    This is a sentence with <blockquote>blockquote</blockquote> element. <br>
+    This is a sentence with <q>quote</q> element. <br>
+    This is a sentence with "quote" element. <br>
+    This is a sentence with <abbr title="Abbreviation">abbr</abbr> element. <br>
+    This is a sentence with <acronym title="Acronym Title">acrm</acronym> element. <br>
+    This is a sentence with <cite>cite</cite> element. <br>
+    This is a sentence with <dfn>definition</dfn> element. <br>
+    This is a sentence with <a>address</a> element. <br>
+    This is a sentence with <a href="http://google.com">address with hyperlink</a> element. <br>
+    This is a sentence with <a href="mailto:address@address.com">address with mailto</a> element. <br>
+    This is a sentence with <ins>insert</ins> and <del>delete</del> element. <br>
+    This is a sentence with <s>crossed line</s> element. <br>
+  </p>
+  <h3 id="LIST">List</h3>
+  <p>
+    <ol>
+      <li>Ordered_List_Item_1</li>
+      <li>Ordered_List_Item_2</li>
+      <li>Ordered_List_Item_3</li>
+    </ol>
+    <ul>
+      <li>Unordered_List_Item_1</li>
+      <li>Unordered_List_Item_2</li>
+      <li>Unordered_List_Item_3</li>
+    </ul>
+    <dl>
+      <dt>Definition_List_Item1</dt>
+      <dd>Item1_Part_1</dd>
+      <dd>Item1_Part_2</dd>
+      <dt>Definition_List_Item2</dt>
+      <dd>Item2_Part_1</dd>
+      <dd>Item2_Part_2</dd>
+      <dt>Definition_List_Item3</dt>
+      <dd>Item3_Part_1</dd>
+      <dd>Item3_Part_2</dd>
+    </dl>
+  </p>
+  <h3 id="LINK">Link</h3>
+  <p>
+    This is a link for <a href="http://google.com" target="_blank">Google<a> <br>
+    This is a link for <a href="../Home.html" >Home Page<a> <br>
+    This is a link for <a href="Pythonscripts/Python.html" target="_blank">Python Scripts<a> <br>
+  </p>
+  <h3 id="IMAGE">Image</h3>
+  <figure>
+  <img src="https://vignette.wikia.nocookie.net/detroit-become-human/images/c/c8/Hostess_Chloe.jpg/revision/latest?cb=20180720215251" alt="" width="400" height ="400"/>
+  <br />
+  <figcaption>detroit-become-human</figcaption>
+  </figure>
+  <h3 id="TABLE">Table</h3>
+  <table width = "100" cellpadding = "10" cell spacing = "1" border = "1" bgcolor="#FFFFFF">
+    <thead bgcolor = #F0B823>
+    <tr>
+      <th></th>
+      <th scope="col">Sunday</th> <!--table headers-->
+      <th scope="col">Monday</th>
+      <th scope="col">Tuesday</th>
+      <th scope="col">Wednesday</th>
+      <th scope="col">Thursday </th>
+      <th scope="col">Friday</th>
+      <th scope="col">Saturday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+      <th scope="row" bgcolor = #F0B823>Customers</th>
+      <td>45</td> <!--table row = tr, table data = td-->
+      <td>25</td>
+      <td>20</td>
+      <td>30</td>
+      <td rowspan = "3" bgcolor = #999999>CLOSED</td>
+      <td>40</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th scope="row" bgcolor = #F0B823>Girls</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>  
+    <tr>
+      <th scope="row" bgcolor = #F0B823>Opening Hours</th>
+      <td>12:00PM - 7:00AM</td>
+      <td colspan = "3">3:00PM - 7:00AM</td>
+      <td colspan = "2">12:00PM - 7:00AM</td>
+    </tr>
+  <tfoot bgcolor = #F0B823>
+    <th scope="row">Profit</th>
+    <td>180</td>
+    <td>50</td>
+    <td>80</td>
+    <td>60</td>
+    <td>0</td>
+    <td>120</td>
+    <td>200</td>
+  </tfoot>
+</table>
+</body>
+<aside>
+<section class="classone">
+<h3 id="VIDEO">Video</h3>
+<p>
+  Video link
+  <video src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" 
+  poster = "https://vignette.wikia.nocookie.net/detroit-become-human/images/c/c8/Hostess_Chloe.jpg/revision/latest?cb=20180720215251"
+  width="512" height="384"
+  preload="auto"controls loop></video>
+</p>
+</section>
+<section class="classtwo">
+<h3 id="FORM">Form</h3>
+  <p>Name:<input type="text" name="Name" size="15"/>Password:<input type="text" name="Name" size="15"/></p>
+      <h4>Level 4 headings</h4>
+  <h5>Level 5 heading</h5>
+  <h6>Level 6 heading</h6>
+  <a href="#TOP"> Back To Top </a>
+</section>
+</aside>
+</html>
